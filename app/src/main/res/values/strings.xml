@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Gorjetas</string>
+    <string name="custo_do_servico">Custo do Serviço</string>
+    <string name="como_foi_o_servico">Como foi o serviço?</string>
+    <string name="incrivel_20">Incrível(20%)</string>
+    <string name="bom_18">Bom(18%)</string>
+    <string name="relugar_15">Relugar(15%)</string>
+    <string name="deseja_arredondar">Deseja arredondar?</string>
+    <string name="calcular">Calcular</string>
+    <string name="gorjeta">gorjeta%s</string>
+
+</resources>

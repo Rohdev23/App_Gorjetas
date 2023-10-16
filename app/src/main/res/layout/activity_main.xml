@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+    <ImageView
+            android:id="@+id/icon_custo_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/ic_custo"
+            app:layout_constraintTop_toTopOf="@id/custo_do_servico"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/custo_do_servico"/>
+
+<com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/custo_do_servico"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toEndOf="@id/icon_custo_servico"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/custo_do_servico"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/custo_do_servico_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
+
+</com.google.android.material.textfield.TextInputLayout>
+
+<ImageView
+        android:id="@+id/icon_servico_pergunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_servico"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pergunta_de_servico"
+        app:layout_constraintBottom_toBottomOf="@id/pergunta_de_servico"/>
+
+
+    <TextView
+            android:id="@+id/pergunta_de_servico"
+            style="@style/Widget.Gorjetas.TextView"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/como_foi_o_servico"
+            app:layout_constraintStart_toStartOf="@id/custo_do_servico"
+            app:layout_constraintTop_toBottomOf="@id/custo_do_servico"/>
+
+    <RadioGroup
+            android:id="@+id/opcoes_de_dicas"
+            android:checkedButton="@id/opcao_20_porcento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/custo_do_servico"
+            app:layout_constraintTop_toBottomOf="@id/pergunta_de_servico">
+        <RadioButton
+                android:id="@+id/opcao_20_porcento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/incrivel_20"/>
+
+        <RadioButton
+                android:id="@+id/opcao_18_porcento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bom_18"/>
+        <RadioButton
+                android:id="@+id/opcao_15_porcento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/relugar_15"/>
+
+    </RadioGroup>
+
+    <ImageView
+            android:id="@+id/arredondar_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arredondar_up"
+            android:importantForAccessibility="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dica_arredondamento"
+            app:layout_constraintBottom_toBottomOf="@id/dica_arredondamento"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+
+            android:id="@+id/dica_arredondamento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/deseja_arredondar"
+            android:checked="true"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/arredondar_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/opcoes_de_dicas"
+            app:layout_constraintTop_toBottomOf="@id/opcoes_de_dicas"/>
+
+    <Button
+            android:id="@+id/botao_calcular"
+            android:layout_marginTop="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/calcular"
+            app:layout_constraintTop_toBottomOf="@id/dica_arredondamento"
+            app:layout_constraintStart_toStartOf="@id/dica_arredondamento"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:id="@+id/resultado_gorjeta"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.Gorjetas.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/botao_calcular"
+            android:text="@string/gorjeta"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
